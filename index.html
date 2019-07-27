@@ -4,11 +4,11 @@
 <head>
     <meta name="viewport" http-equiv="Content-Type"
         content="width=device-width, initial-scale=1, text/html;charset=UTF-8">
-    <link rel="stylesheet" href="bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    
+
     <title>TURI'S PIZZA</title>
 </head>
 
@@ -22,31 +22,71 @@
             vibe and enchantment associated with TURI's Pizzas</p>
         <div id="myBtnContainer">
             <div class="header">
-                    <button class="btn active logo" onclick="filterSelection('all')">Turi's Pizzas</button>
-                    <div class="header-right">
-                            <button class="btn" onclick="filterSelection('vegeterian')">Vegeterian</button>
-                            <button class="btn" onclick="filterSelection('meatLovers')">Meat Lovers</button>
-                            <button class="btn" onclick="filterSelection('seafood')">Seafood Pizza</button>
-                            <button class="btn" onclick="filterSelection('specialty')">Specialty Pizzas</button>
-                    </div>
-                    
+                <button class="btn active logo" onclick="filterSelection('all')">Turi's Pizzas</button>
+                <div class="header-right">
+                    <button class="btn" onclick="filterSelection('vegeterian')">Vegeterian</button>
+                    <button class="btn" onclick="filterSelection('meatLovers')">Meat Lovers</button>
+                    <button class="btn" onclick="filterSelection('seafood')">Seafood Pizza</button>
+                    <button class="btn" onclick="filterSelection('specialty')">Specialty Pizzas</button>
+                </div>
+
             </div>
-            
+
         </div>
         <!--Portfolio Gallery Grid-->
         <div class="row">
             <div class="column vegeterian">
                 <div class="content">
-                    <img src="assets/pizzas/pizza1.jpeg" alt="Veggie" style="width: 100% height=100%">
+                    <img src="assets/pizzas/pizza1.jpeg" alt="Veggie" style="width: 100%">
                     <h4>VEGGIE</h4>
-                    <p>vyfvyubfuinuggpigfbuyuffyubfoyfybgbgyogib</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
+
                 </div>
             </div>
             <div class="column vegeterian">
                 <div class="content">
-                    <img src="assets/pizzas/pizza2.jpg" alt="Veggie Delux" style="width: 100% height=100%">
+                    <img src="assets/pizzas/pizza2.jpg" alt="Veggie Delux" style="width: 100%">
                     <h4>VEGGIE DELUX</h4>
-                    <p>hvhldbvsbvsbkldbvnbvsfklbvbvb</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
+
                 </div>
 
             </div>
@@ -54,75 +94,281 @@
                 <div class="content">
                     <img src="assets/pizzas/pizza3.jpg" alt="Spicy Vegg" style="width: 100%">
                     <h4>SPICY VEGG</h4>
-                    <p>gcdhcvasdcbsdjaclasdcbadblchbhld</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
+
                 </div>
 
             </div>
+        </div>
+        <div class="row">
             <div class="column meatLovers">
                 <div class="content">
                     <img src="assets/pizzas/pizza4.jpg" alt="Veggie" style="width: 100%">
                     <h4>SUPREME</h4>
-                    <p>vyfvyubfuinuggpigfbuyuffyubfoyfybgbgyogib</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
                 </div>
             </div>
             <div class="column meatLovers">
                 <div class="content">
                     <img src="assets/pizzas/pizza1.jpeg" alt="Veggie" style="width: 100%">
                     <h4>HAUSE FAVORITES</h4>
-                    <p>vyfvyubfuinuggpigfbuyuffyubfoyfybgbgyogib</p>
+                    <h4>SUPREME</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
+
                 </div>
             </div>
             <div class="column meatLovers">
                 <div class="content">
                     <img src="assets/pizzas/pizza6.jpg" alt="Veggie" style="width: 100%">
                     <h4>BBQ CHICKEN</h4>
-                    <p>vyfvyubfuinuggpigfbuyuffyubfoyfybgbgyogib</p>
+                    <h4>SUPREME</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
+
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="column seafood">
                 <div class="content">
                     <img src="assets/pizzas/pizza2.jpg" alt="Veggie" style="width: 100%">
                     <h4>CAPTAIN PRAWN</h4>
-                    <p>vyfvyubfuinuggpigfbuyuffyubfoyfybgbgyogib</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
+
                 </div>
             </div>
             <div class="column seafood">
                 <div class="content">
                     <img src="assets/pizzas/pizza6.jpg" alt="Veggie" style="width: 100%">
                     <h4>SEA SILLY</h4>
-                    <p>vyfvyubfuinuggpigfbuyuffyubfoyfybgbgyogib</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
+
                 </div>
             </div>
             <div class="column seafood">
                 <div class="content">
                     <img src="assets/pizzas/pizza1.jpeg" alt="Veggie" style="width: 100%">
                     <h4>MUMMY MULLET</h4>
-                    <p>vyfvyubfuinuggpigfbuyuffyubfoyfybgbgyogib</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="column specialty">
                 <div class="content">
                     <img src="assets/pizzas/pizza4.jpg" alt="Veggie" style="width: 100%">
                     <h4>TURI TANTRUM</h4>
-                    <p>vyfvyubfuinuggpigfbuyuffyubfoyfybgbgyogib</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
                 </div>
             </div>
             <div class="column specialty">
                 <div class="content">
                     <img src="assets/pizzas/pizza3.jpg" alt="Veggie" style="width: 100%">
                     <h4>CHEESE LOVERS</h4>
-                    <p>vyfvyubfuinuggpigfbuyuffyubfoyfybgbgyogib</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
                 </div>
             </div>
             <div class="column specialty">
                 <div class="content">
                     <img src="assets/pizzas/pizza4.jpg" alt="Veggie" style="width: 100%">
                     <h4>CHAPO PIZZA</h4>
-                    <p>vyfvyubfuinuggpigfbuyuffyubfoyfybgbgyogib</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
+                        voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
+                        minus dolores voluptatum!</p>
+                        <button class="open-button" onclick="openForm()">BUY</button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <h1>Checkout</h1>
+                        
+                            <label for="email"><b>Name</b></label>
+                            <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                        
+                            <label for="psw"><b>Delivery Instructions</b></label>
+                            <textarea type="text" placeholder="Where should we deliver?"required></textarea>
+                        
+                            <button type="submit" class="btn">Make Payment</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                          </form>
+                        </div>
+                        
                 </div>
             </div>
             <!--END GRID-->
         </div>
+
+
+
         <!--END MAIN-->
     </div>
     <script src="scripts.js"></script>

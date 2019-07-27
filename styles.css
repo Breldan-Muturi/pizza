@@ -51,7 +51,9 @@ h1 {
     font-size: 50px;
     word-break: break-all;
 }
-
+p {
+    position: inline;
+}
 .row {
     margin: 10px -16px;
     display: -ms-flexbox;
@@ -63,9 +65,10 @@ h1 {
     padding: 0 4px;
 }
 
+
 /*Add padding between each column*/
 .row,
-.row>.column {
+.row>.col-md-4 {
     padding: 8px;
 }
 
@@ -82,6 +85,7 @@ h1 {
     padding: 0 4px;
 }
 
+
 .column img {
     margin-top: 8px;
     vertical-align: middle;
@@ -94,18 +98,22 @@ h1 {
         -ms-flex: 50%;
         flex: 50%;
         max-width: 50%;
+        width: 50%;
     }
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
     .column {
+        width: 100%;
         -ms-flex: 100%;
         flex: 100%;
         max-width: 100%;
     }
+   
 
 }
+
 
 .row:after {
     content: "";
@@ -117,6 +125,8 @@ h1 {
 .content {
     background-color: white;
     padding: 10px;
+    width: 100%;
+    max-width: 100%;
 }
 
 /*The show class is added to the filtered elements*/
@@ -144,4 +154,68 @@ h1 {
 .btn.active {
     background-color: #666;
     color: white;
+}
+/*Button that pops up the buying form*/
+.open-button {
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 110px;
+    border-radius: 30px;
+}
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 25px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  /* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  /* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+}
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
 }
