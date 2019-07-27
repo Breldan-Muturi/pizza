@@ -1,60 +1,106 @@
 * {
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #f1f1f1;
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /*Center website*/
-.main{
-    max-width:1000px;
+.main {
+    max-width: 1000px;
     margin: auto;
 }
-h1{
-    font-size:50px;
+
+h1 {
+    font-size: 50px;
     word-break: break-all;
 }
-.row{
-    margin:10px -16px;
+
+.row {
+    margin: 10px -16px;
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
 }
+
 /*Add padding between each column*/
 .row,
-.row>.column{
+.row>.column {
     padding: 8px;
 }
+
 /*create three equal columns that float next to each other*/
-.column{
+.column {
     float: left;
     width: 33.33%;
-    display: none; /*Hide all the elements by default*/
+    display: none;
+    /*Hide all the elements by default*/
+    -ms-flex: 33.33%;
+    /* IE10 */
+    flex: 33.33%;
+    max-width: 33.33%;
+    padding: 0 4px;
 }
-.row:after{
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+.row:after {
     content: "";
     display: table;
     clear: both;
 }
+
 /*Content*/
-.content{
+.content {
     background-color: white;
     padding: 10px;
 }
+
 /*The show class is added to the filtered elements*/
-.show{
+.show {
     display: block;
 }
+
 /*Style for the buttons*/
-.btn{
+.btn {
     border: none;
     outline: none;
     padding: 12px 16px;
     background-color: white;
     cursor: pointer;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #ddd;
 }
-.btn.active{
+
+.btn.active {
     background-color: #666;
     color: white;
 }
