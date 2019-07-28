@@ -222,3 +222,12 @@ p {
 .extra{
     color: red;
 }
+.product-quantity {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #191919;
+    width: 100%;
+    max-width: 30px;
+    
+}
