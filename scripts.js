@@ -48,108 +48,190 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
-
-
-if (document.readyState == 'loading') {
-  document.addEventListener('DOMContentLoaded', ready)
-} else {
-  ready()
+function validation(id) {
+	var valid = true;
+	var quantity = $("#product-quantity-" + id).val();
+	if (quantity == "" || quantity == 0) {
+		valid = false;
+	}
+	return valid;
 }
 
-function ready() {
-  var removeCart = document.getElementsByClassName('btn-danger')
-  for (var i = 0; i < removeCartItemButtons.length; i++) {
-      var button = removeCartItemButtons[i]
-      button.addEventListener('click', removeCartItem)
-  }
-
-  var quantityInputs = document.getElementsByClassName('cart-quantity-input')
-  for (var i = 0; i < quantityInputs.length; i++) {
-      var input = quantityInputs[i]
-      input.addEventListener('change', quantityChanged)
-  }
-
-  var addCart = document.getElementsByClassName('shop-item-button')
-  for (var i = 0; i < addCart.length; i++) {
-      var button = addCart[i]
-      button.addEventListener('click', addClicked)
-  }
- 
-  document.getElementsByClassName('btn-purchase')[0].addEventListener('click', checkOutClicked)
+function checkOutShowBox() {
+	$("#paynow-container").slideToggle();
 }
 
-function checkOutClicked() {
-  alert("Thank you for choosing Turi's Pizza")
-  var cartItems = document.getElementsByClassName('cart-items')[0]
-  while (cartItems.hasChildNodes()) {
-      cartItems.removeChild(cartItems.firstChild)
-  }
-  updateCartTotal()
+function paynowValidation() {
+	var valid = true;
+	var customer_name = $("#customer_name").val();
+	var emailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	$("#customer_name").css("border", "#2ecc71 1px solid");
+	$("#error").html("").hide();
+	if (customer_name == "" || customer_name.trim() == "") {
+		$(".error").html(" required.").css({
+			"color" : "#d96557",
+			"margin" : "5px"
+		}).show();
+		$("#customer_name").css("border", "#d96557 1px solid");
+		valid = false;
+	}
+	if (customer_name != "" && customer_name.trim() != ""
+			&& !emailRegex.test(customer_name)) {
+		$("#customer_name").css("border", "#d96557 1px solid");
+		$("#error").html("Invalid email address.").css({
+			"color" : "#d96557",
+			"margin" : "5px"
+		}).show();
+		valid = false;
+	}
+	return valid;
 }
 
-function removeCartItem(event) {
-  var buttonClicked = event.target
-  buttonClicked.parentElement.parentElement.remove()
-  updateCartTotal()
+function checkOut(cartCount) {
+	if (cartCount > 1) {
+		var valid = paynowValidation();
+		if (valid == true) {
+			var customerEmail = $("#customer_name").val();
+			$("#paynow-btn").hide();
+			$("#paynow-loader").show();
+			$.ajax({
+				url : "?checkout=check&mail=" + customerEmail,
+				type : "GET",
+				dataType : "html", // expect html to be returned
+				success : function(response) {
+					window.location.replace("?checkout=check-success");
+					$("#paynow-btn").show();
+					$("#paynow-loader").hide();
+				},
+				error : function(response) {
+					window.location.replace("?checkout=check-error");
+					console.log("#paynow-btn");
+				}
+			});
+		}
+	}
 }
 
-function quantityChanged(event) {
-  var input = event.target
-  if (isNaN(input.value) || input.value <= 0) {
-      input.value = 1
-  }
-  updateCartTotal()
+function deleteBySingleProduct(cartCount, index, id) {
+	if (cartCount >= 1) {
+		$.ajax({
+			url : "?checkout=delete-single&index=" + index,
+			success : function(response) {
+				$("#tick-icon-" + id).hide();
+				$("#add-to-button-" + id).show();
+				$(".checkout-title-row").html(response);
+			}
+		});
+	}
 }
 
-function addClicked(event) {
-  var button = event.target
-  var shopItem = button.parentElement.parentElement
-  var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
-  var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-  var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
-  addItemToCart(title, price, imageSrc)
-  updateCartTotal()
+function addToCart(id) {
+	var valid = validation(id);
+	if (valid == true) {
+		$("#add-to-cart-button-" + id).hide();
+		$("#adding_load_" + id).removeClass("loader-hide");
+		var product_id = $('#product-id-' + id).val();
+		var quantity = $('#product-quantity-' + id).val();
+		var product_title = $('#title-' + id).val();
+		var product_price = $('#price-' + id).val();
+
+		var query = "product_id=" + product_id + "&product_title="
+				+ product_title + "&product_quantity=" + quantity
+				+ "&product_price=" + product_price;
+		if ($('#img-url-' + id).length > 0) {
+			query += "&image_url=" + $('#img-url-' + id).val();
+		}
+		$.ajax({
+			type : 'POST',
+			data : query,
+			url : "hera/ajax-end-point/add-to-cart-endpoint.php?cart=add",
+			success : function(response) {
+				$("#adding_load_" + id).addClass("loader-hide");
+				$("#added_btn_" + id).removeClass("loader-hide");
+				var productResp = $.parseJSON(response);
+				$('#cart_counts').html(productResp[0]['count']);
+				$('.display-message-foundation').remove();
+				$('.display-success').remove();
+				if (!document.getElementById('#gotocart_btn')) {
+					$("#gotocart_btn").remove();
+					$('#layout-sec').append(productResp[0]['goCart']);
+					$("#gotocart_btn").delay(2000).fadeOut("slow");
+				}
+			}
+		});
+	}
 }
 
-function addItemToCart(title, price, imageSrc) {
-  var cartRow = document.createElement('div')
-  cartRow.classList.add('cart-row')
-  var cartItems = document.getElementsByClassName('cart-items')[0]
-  var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-  for (var i = 0; i < cartItemNames.length; i++) {
-      if (cartItemNames[i].innerText == title) {
-          alert('This item is already added to the cart')
-          return
-      }
-  }
-  var cartRowContents = `
-      <div class="cart-item cart-column">
-          <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
-          <span class="cart-item-title">${title}</span>
-      </div>
-      <span class="cart-price cart-column">${price}</span>
-      <div class="cart-quantity cart-column">
-          <input class="cart-quantity-input" type="number" value="1">
-          <button class="btn btn-danger" type="button">REMOVE</button>
-      </div>`
-  cartRow.innerHTML = cartRowContents
-  cartItems.append(cartRow)
-  cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
-  cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+function buyNow(id) {
+	var valid = validation(id);
+	if (valid == true) {
+		var product_id = $('#product-id-' + id).val();
+		var quantity = $('#product-quantity-' + id).val();
+		var product_title = $('#title-' + id).val();
+		var product_price = $('#price-' + id).val();
+		var imageurl = $('#img-url-' + id).val();
+		var redirectUrl = $('#redirect-url-' + id).val();
+		var query = "product_id=" + product_id + "&product_title="
+				+ product_title + "&product_quantity=" + quantity
+				+ "&product_price=" + product_price;
+		if ($('#img-url-' + id).length > 0) {
+			query += "&image_url=" + $('#img-url-' + id).val();
+		}
+		$.ajax({
+			type : 'POST',
+			data : query,
+			url : "hera/ajax-end-point/buynow-endpoint.php?cart=add",
+			success : function(response) {
+				$('#cart_counts').html(response);
+				window.location.replace(redirectUrl);
+
+			}
+		});
+	}
 }
 
-function updateCartTotal() {
-  var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-  var cartRows = cartItemContainer.getElementsByClassName('cart-row')
-  var total = 0
-  for (var i = 0; i < cartRows.length; i++) {
-      var cartRow = cartRows[i]
-      var priceElement = cartRow.getElementsByClassName('cart-price')[0]
-      var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-      var price = parseFloat(priceElement.innerText.replace('KES', ''))
-      var quantity = quantityElement.value
-      total = total + (price * quantity)
-  }
-  total = Math.round(total * 100) / 100
-  document.getElementsByClassName('cart-total-price')[0].innerText = 'KES' + total
+function increment_quantity(id) {
+	var inputQuantityElement = $("#" + id);
+	var newQuantity = parseInt($(inputQuantityElement).val()) + 1;
+	$(inputQuantityElement).val(newQuantity);
+}
+
+function decrement_quantity(id) {
+	var inputQuantityElement = $("#" + id);
+	if ($(inputQuantityElement).val() > 1) {
+		var newQuantity = parseInt($(inputQuantityElement).val()) - 1;
+		$(inputQuantityElement).val(newQuantity);
+	}
+}
+
+function updateQuantity() {
+	var valid = true;
+	var regex = /\./;
+
+	$('.quantity-input').each(
+			function() {
+				if (!$.isNumeric($(this).val()) || $(this).val() == ""
+						|| $(this).val() == 0 || regex.test($(this).val())
+						|| $(this).val() < $(this).data("min")) {
+					$($(this)).css("border", "1px solid #f59494");
+
+					valid = false;
+				}
+			});
+
+	if (valid == true) {
+		var data = $('#frm-cart').serialize();
+		$.ajax({
+			type : 'POST',
+			data : data,
+			url : "index.php?cart=update",
+			success : function(response) {
+				$(".checkout-title-row").html(response);
+			}
+		});
+	}
+}
+
+function hideCart() {
+	$("#cartHide").slideToggle();
 }

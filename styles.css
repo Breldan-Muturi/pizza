@@ -91,6 +91,10 @@ p {
     vertical-align: middle;
     width: 100%;
 }
+img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
