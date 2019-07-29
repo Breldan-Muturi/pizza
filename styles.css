@@ -235,6 +235,9 @@ img:hover {
     margin-bottom:10px;
     opacity: 0.7;
   }
+.form-container .buy {
+    background-color: blue;
+}
   /* Add a red background color to the cancel button */
 .form-container .cancel {
     background-color: red;

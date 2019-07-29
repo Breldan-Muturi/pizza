@@ -48,6 +48,13 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+function openCheckOut() {
+  document.getElementById("checkout").style.display = "block";
+}
+
+function closeCheckOut() {
+  document.getElementById("checkout").style.display = "none";
+}
 
 var totalOrderPrice=[];
 function Placeorder(size, crust, topping){

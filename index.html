@@ -5,7 +5,7 @@
     <meta name="viewport" http-equiv="Content-Type"
         content="width=device-width, initial-scale=1, text/html;charset=UTF-8">
     <link rel="stylesheet" href="bootstrap.css">
-    
+
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -22,16 +22,11 @@
             vibe and enchantment associated with TURI's Pizzas!</p>
         <div class="form-popup" id="myForm">
             <form class="form-container">
-                <h2>Checkout</h2>
+                <h2>Add to Cart</h2>
 
-                <label for="name"><b>Name</b></label>
-                <input type="text" class="cutomer-name" placeholder="Hey, what's your name?" name="email" required>
 
-                <label for="phone"><b>Phone no:</b></label>
-                <input type="text" class="telephone" placeholder="Enter Phone no">
+                <label for="size"><b>Pick a Size</b></label>
 
-                <label for="size">Pick a Size</label>
-                
                 <select required class="form-control" id="size">
                     <option></option>
                     <option value="Regular">Regular 10"-KES 1,000</option>
@@ -39,7 +34,7 @@
                     <option value="Large">Large 18"-KES 2,000</option>
                 </select>
 
-                <label for="crust">And a Crust</label>
+                <label for="crust"><b>And a Crust</b></label>
                 <div class="col-md-4"></div>
                 <select required class="form-control" id="crust">
                     <option></option>
@@ -48,22 +43,38 @@
                     <option value="glutten-free">Glutten-free</option>
                 </select>
 
-                <label for="toppings">Extra Toppings</label>
+                <label for="toppings"><b>Extra Toppings</b></label>
                 <div class="col-md-4"></div>
-                <select required class="form-control" id="toppings">
-                        <option></option>
-                        <option value="cheese">Cheese KES-150</option>
-                        <option value="pepperoni">Pepperoni KES-200</option>
-                        <option value="oineapple">Pineapple KES-100</option>
-                        <option value="onion">Onion KES-50</option>
-                    </select>
+                <select required class="form-control mb-2" id="toppings">
+                    <option></option>
+                    <option value="cheese">Cheese KES-150</option>
+                    <option value="pepperoni">Pepperoni KES-200</option>
+                    <option value="oineapple">Pineapple KES-100</option>
+                    <option value="onion">Onion KES-50</option>
+                </select>
 
 
+
+
+                <button type="button" class="btn" onclick="closeForm();">Add to Cart</button>
+                <button type="button" class="btn buy" onclick="openCheckOut(); closeForm();">Checkout</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+            </form>
+        </div>
+        <div class="form-popup" id="checkout">
+            <form class="form-container">
+                <h2>Checkout</h2>
+
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Hey,what's your name?" name="name" required>
+
+                <label for="phone"><b>Phone Number</b></label>
+                <input type="text" placeholder="07XXXXXXXX" name="number" required>
                 <label for="delivery"><b>Delivery Instructions</b></label>
                 <textarea type="text" placeholder="Where should we deliver?" required></textarea>
                 <button disabled="disabled" class="btn-primary summary">Summary</button>
-                <button type="submit" class="btn">Checkout</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
+                <button type="button" class="btn" onclick="closeCheckOut()">Checkout</button>
+                <button type="button" class="btn cancel" onclick="closeCheckOut()">Back</button>
             </form>
         </div>
         <div id="myBtnContainer">
