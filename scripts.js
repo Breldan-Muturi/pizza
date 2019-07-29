@@ -81,20 +81,13 @@ Placeorder.prototype.costOfPizza=function(){
 	} else if(this.topping===toppings[1]){
 		this.price+= 100;
 	} else if (this.topping===toppings[2]){
-		this.price+= 100;
+		this.price+= 50;
+	} else if (this.topping===toppings[3]){
+		this.price+=50;
 	}
 	return this.price;
 }
-Placeorder.prototype.totalCost = function() {
- 
-	var shoppingCartTotal = 0;
-	
-	for (var order = 0; order < totalOrderPrice.length; order++) {
-	
-	  shoppingCartTotal += totalOrderPrice[order];
-	}
-	return shoppingCartTotal;
-  }
+
 function validation(id) {
 	var valid = true;
 	var quantity = $("#product-quantity-" + id).val();
@@ -105,15 +98,15 @@ function validation(id) {
 }
 
 function increment_quantity(id) {
-	var inputQuantityElement = $("#" + id);
-	var newQuantity = parseInt($(inputQuantityElement).val()) + 1;
-	$(inputQuantityElement).val(newQuantity);
+	var inputQuantity = $("#" + id);
+	var newQuantity = parseInt($(inputQuantity).val()) + 1;
+	$(inputQuantity).val(newQuantity);
 }
 
 function decrement_quantity(id) {
-	var inputQuantityElement = $("#" + id);
-	if ($(inputQuantityElement).val() > 1) {
-		var newQuantity = parseInt($(inputQuantityElement).val()) - 1;
-		$(inputQuantityElement).val(newQuantity);
+	var inputQuantity = $("#" + id);
+	if ($(inputQuantity).val() > 0) {
+		var newQuantity = parseInt($(inputQuantity).val()) - 1;
+		$(inputQuantity).val(newQuantity);
 	}
 }
