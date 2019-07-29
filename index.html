@@ -29,34 +29,31 @@
 
                 <select required class="form-control" id="size">
                     <option></option>
-                    <option value="Regular">Regular 10"-KES 1,000</option>
-                    <option value="Medium">Medium 14"-KES 1,500</option>
-                    <option value="Large">Large 18"-KES 2,000</option>
+                    <option id="regular" value="1000">Regular 10"-KES 1,000</option>
+                    <option id="medium" value="1500">Medium 14"-KES 1,500</option>
+                    <option id="large" value="2000">Large 18"-KES 2,000</option>
                 </select>
 
                 <label for="crust"><b>And a Crust</b></label>
-                <div class="col-md-4"></div>
+
+
                 <select required class="form-control" id="crust">
                     <option></option>
-                    <option value="crispy">Crispy</option>
-                    <option value="stuffed">Stuffed</option>
-                    <option value="glutten-free">Glutten-free</option>
+                    <option id="crispy" value="0">Crispy</option>
+                    <option id="stuffed" value="0">Stuffed</option>
+                    <option id="glutten-free" value="0">Glutten-free</option>
                 </select>
 
                 <label for="toppings"><b>Extra Toppings</b></label>
-                <div class="col-md-4"></div>
+
                 <select required class="form-control mb-2" id="toppings">
                     <option></option>
-                    <option value="cheese">Cheese KES-150</option>
-                    <option value="pepperoni">Pepperoni KES-200</option>
-                    <option value="oineapple">Pineapple KES-100</option>
-                    <option value="onion">Onion KES-50</option>
+                    <option id="cheese" value="150">Cheese KES-150</option>
+                    <option id="pepperoni" value="200">Pepperoni KES-200</option>
+                    <option id="pineapple" value="100">Pineapple KES-100</option>
+                    <option id="onion" value="50">Onion KES-50</option>
                 </select>
-
-
-
-
-                <button type="button" class="btn" onclick="closeForm();">Add to Cart</button>
+                <button type="button" class="btn" onclick="closeForm(); addCartPizza();">Add to Cart</button>
                 <button type="button" class="btn buy" onclick="openCheckOut(); closeForm();">Checkout</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
             </form>
@@ -70,10 +67,13 @@
 
                 <label for="phone"><b>Phone Number</b></label>
                 <input type="text" placeholder="07XXXXXXXX" name="number" required>
+                <button type="button" class="btn summary">
+                    <p id="summary">Summary</p>
+                </button>
                 <label for="delivery"><b>Delivery Instructions</b></label>
                 <textarea type="text" placeholder="Where should we deliver?" required></textarea>
-                <button disabled="disabled" class="btn-primary summary">Summary</button>
-                <button type="button" class="btn" onclick="closeCheckOut()">Checkout</button>
+
+                <button type="button" class="btn" onclick="closeCheckOut(); confirmationPopUp();">Confirm</button>
                 <button type="button" class="btn cancel" onclick="closeCheckOut()">Back</button>
             </form>
         </div>

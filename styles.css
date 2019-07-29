@@ -193,8 +193,9 @@ img:hover {
     bottom: 23px;
     float: right;
     width: 110px;
-    border-radius: 30px;
+    border-radius: 10px;
 }
+
 /* The popup form - hidden by default */
 .form-popup {
     display: none;
@@ -235,7 +236,7 @@ img:hover {
     margin-bottom:10px;
     opacity: 0.7;
   }
-.form-container .buy {
+.form-container .buy,.form-container .summary {
     background-color: blue;
 }
   /* Add a red background color to the cancel button */

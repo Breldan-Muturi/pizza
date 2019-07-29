@@ -56,45 +56,6 @@ function closeCheckOut() {
   document.getElementById("checkout").style.display = "none";
 }
 
-var totalOrderPrice=[];
-function Placeorder(size, crust, topping){
-	this.size=size;
-	this.crust=crust;
-	this.topping=topping;
-	this.price=0;
-}
-
-var pizzaSize=["Regular","Medium","Large"];
-var pizzaCrust = ["crispy","stuffed","gluten-free"];
-var toppings=["cheese","pepperoni","pineapple","onion"];
-
-Placeorder.prototype.costOfPizza=function(){
-	if (this.size === pizzaSize[0]){
-		this.price += 1000;
-	} else if(this.size===pizzaSize[1]){
-		this.price+= 1500;
-	} else if (this.size===pizzaSize[2]){
-		this.price+= 2000;
-	}
-	if (this.crust === pizzaCrust[0]){
-		this.price += 0;
-	} else if(this.crust===pizzaCrust[1]){
-		this.price+= 0;
-	} else if (this.crust===pizzaCrust[2]){
-		this.price+= 0;
-	}
-	if (this.topping === toppings[0]){
-		this.price += 150;
-	} else if(this.topping===toppings[1]){
-		this.price+= 100;
-	} else if (this.topping===toppings[2]){
-		this.price+= 50;
-	} else if (this.topping===toppings[3]){
-		this.price+=50;
-	}
-	return this.price;
-}
-
 function validation(id) {
 	var valid = true;
 	var quantity = $("#product-quantity-" + id).val();
@@ -116,4 +77,10 @@ function decrement_quantity(id) {
 		var newQuantity = parseInt($(inputQuantity).val()) - 1;
 		$(inputQuantity).val(newQuantity);
 	}
+}
+function addCartPizza(){
+	document.getElementById("summary").innerHTML = "BBQ CHICKEN-1000";	
+}
+function confirmationPopUp(){
+	alert("Thank you Trevor for choosing Turi's Pizza. Your pizza will be at your door in 1 hour.")
 }
