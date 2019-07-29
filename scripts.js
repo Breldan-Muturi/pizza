@@ -82,5 +82,8 @@ function addCartPizza(){
 	document.getElementById("summary").innerHTML = "BBQ CHICKEN-1000";	
 }
 function confirmationPopUp(){
-	alert("Thank you Trevor for choosing Turi's Pizza. Your pizza will be at your door in 1 hour.")
+	var name = document.getElementById("name").value;
+	var address = document.getElementById("address").value;
+	alert("Thank you "+name+" for choosing Turi's Pizza. Your pizza will arrive at "+address+" in 1 hour.");
 }
+

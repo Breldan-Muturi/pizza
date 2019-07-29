@@ -63,7 +63,7 @@
                 <h2>Checkout</h2>
 
                 <label for="name"><b>Name</b></label>
-                <input type="text" placeholder="Hey,what's your name?" name="name" required>
+                <input type="text" id="name" placeholder="Hey,what's your name?" name="name" required>
 
                 <label for="phone"><b>Phone Number</b></label>
                 <input type="text" placeholder="07XXXXXXXX" name="number" required>
@@ -71,7 +71,7 @@
                     <p id="summary">Summary</p>
                 </button>
                 <label for="delivery"><b>Delivery Instructions</b></label>
-                <textarea type="text" placeholder="Where should we deliver?" required></textarea>
+                <textarea type="text" id="address" placeholder="Where should we deliver?" required></textarea>
 
                 <button type="button" class="btn" onclick="closeCheckOut(); confirmationPopUp();">Confirm</button>
                 <button type="button" class="btn cancel" onclick="closeCheckOut()">Back</button>
