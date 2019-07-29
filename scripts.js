@@ -95,52 +95,25 @@ Placeorder.prototype.totalCost = function() {
 	}
 	return shoppingCartTotal;
   }
-  $(document).ready(function() {
-	$(".submit").click(function() {
-	  $(".contacts").toggle(2000);
-	  
-	});
-	$(".additional-info").hide();
-   
-	
-  
-	$("form#customized-pizza").submit(function(event) {
-	  event.preventDefault();
-	  var customSize = $("select#size option:selected").val();
-	  var customcrust = $("select#crust option:selected").val();
-	  var customtopping = $("select#topping option:selected").val();
-	  var newPizzaOrder = new Placeorder(customSize , customcrust , customtopping);
-	  
-	  // var totalOrderPrice = customSize + customcrust + customtopping;
-  
-	  newPizzaOrder.costOfPizza();
-  
-	  totalOrderPrice.push(newPizzaOrder.price);
-  
-  
-  
-	  $("#pizza-size").show();
-	  $("#pizza-crust").show();
-	  $("#pizza-topping").show();
-	  $("#pizza-size").append("\t" + "\t" + customSize);
-	  $("#pizza-crust").append("\t" + "\t" + customcrust);
-	  $("#pizza-topping").append("\t" + "\t" + customtopping);
-	  $("#final-cost").text("\t" + "\t" + newPizzaOrder.totalCost());
-	  
-	  var newRow = '<tr><th scope="row">' + newPizza.orderNo + '</th><td id="size">' + $("#pizza-size").text() + " - " + customSize + '</td><td id="crust">' + $("#pizza-crust").text() + " - " + customcrust + '</td><td id="topping">' + $("#pizza-topping").text() + " - " + customtopping + '</td><td id="final-cost">' + $("#final-cost").text()+" - "+ newPizzaOrder.totalCost() + '</td></tr>'
-  
-		$("#pizza").append(newRow);
-	});
-	$("#checkout-btn").click(function(event) {
-	  event.preventDefault();
-	  // location.reload(); 
-	  $(".additional-info").show();
-	  $(".additional-info h3 span").html(newPizzaOrder.totalCost());
-	  
-	});
-	$("#reload").click(function(){
-	  location.reload();
-	});
-  
-	
-  });
+function validation(id) {
+	var valid = true;
+	var quantity = $("#product-quantity-" + id).val();
+	if (quantity == "" || quantity == 0) {
+		valid = false;
+	}
+	return valid;
+}
+
+function increment_quantity(id) {
+	var inputQuantityElement = $("#" + id);
+	var newQuantity = parseInt($(inputQuantityElement).val()) + 1;
+	$(inputQuantityElement).val(newQuantity);
+}
+
+function decrement_quantity(id) {
+	var inputQuantityElement = $("#" + id);
+	if ($(inputQuantityElement).val() > 1) {
+		var newQuantity = parseInt($(inputQuantityElement).val()) - 1;
+		$(inputQuantityElement).val(newQuantity);
+	}
+}
