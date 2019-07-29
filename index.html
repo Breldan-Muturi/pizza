@@ -21,16 +21,48 @@
         <p>Our pizza ordering platform let's us serve you from wherever you are. We deliver to your doorstep, the same
             vibe and enchantment associated with TURI's Pizzas!</p>
         <div class="form-popup" id="myForm">
-            <form action="/action_page.php" class="form-container">
-                <h1>Checkout</h1>
+            <form class="form-container">
+                <h2>Checkout</h2>
 
-                <label for="email"><b>Name</b></label>
-                <input type="text" placeholder="Hey, what's your name?" name="email" required>
+                <label for="name"><b>Name</b></label>
+                <input type="text" class="cutomer-name" placeholder="Hey, what's your name?" name="email" required>
 
-                <label for="psw"><b>Delivery Instructions</b></label>
+                <label for="phone"><b>Phone no:</b></label>
+                <input type="text" class="telephone" placeholder="Enter Phone no">
+
+                <label for="size">Pick a Size</label>
+                <div class="col-md-4"></div>
+                <select required class="form-control" id="size">
+                    <option></option>
+                    <option value="Regular">Regular 10"</option>
+                    <option value="Medium">Medium 14"</option>
+                    <option value="Large">Large 18"</option>
+                </select>
+
+                <label for="crust">And a Crust</label>
+                <div class="col-md-4"></div>
+                <select required class="form-control" id="crust">
+                    <option></option>
+                    <option value="crispy">Crispy</option>
+                    <option value="stuffed">Stuffed</option>
+                    <option value="glutten-free">Glutten-free</option>
+                </select>
+
+                <label for="toppings">Create Your Own Pizza</label>
+                <div class="col-md-4"></div>
+                <select required class="form-control" id="toppings">
+                        <option></option>
+                        <option value="cheese">Extra Cheese</option>
+                        <option value="pepperoni">Extra Pepperoni</option>
+                        <option value="oineapple">Extra Pineapple</option>
+                        <option value="onion">Extra Onion</option>
+                    </select>
+
+
+                <label for="delivery"><b>Delivery Instructions</b></label>
                 <textarea type="text" placeholder="Where should we deliver?" required></textarea>
 
-                <button type="submit" class="btn">Make Payment</button>
+                <button type="submit" class="btn">Checkout</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
             </form>
         </div>
