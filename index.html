@@ -59,7 +59,7 @@
                 <button type="button" class="quantity-input-btn"
                     onclick="increment_quantity('product-quantity-7')">+</button>
                 <button type="button" class="btn" onclick="closeForm(); openCheckOut(); addCartPizza();">Add to Cart</button>
-                <button type="button" class="btn buy" onclick="openCheckOut(); closeForm();">Checkout</button>
+                <button type="button" class="btn buy" onclick="closeForm();">Order more</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
             </form>
         </div>
@@ -78,7 +78,7 @@
                 <label for="delivery"><b>Delivery Instructions</b></label>
                 <textarea type="text" id="address" placeholder="Where should we deliver?" required></textarea>
 
-                <button type="button" class="btn" onclick="closeCheckOut(); confirmationPopUp();">Confirm</button>
+                <button type="button" class="btn" onclick="closeCheckOut(); confirmationPopUp();">Checkout</button>
                 <button type="button" class="btn cancel" onclick="closeCheckOut()">Back</button>
             </form>
         </div>

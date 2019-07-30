@@ -103,11 +103,3 @@ function confirmationPopUp() {
   alert("Thank you " + name + " for choosing Turi's Pizza. Your pizza will arrive at " + address + " in 1 hour.");
 }
 
-
-
-
-var cheese, pepperoni, pineapple, onion;
-cheese = parseInt(document.getElementById("cheese").value);
-pepperoni = parseInt(document.getElementById("pepperoni").value);
-pineapple = parseInt(document.getElementById("pineapple").value);
-onion = parseInt(document.getElementById("onion").value);
