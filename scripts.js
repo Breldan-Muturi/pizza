@@ -14,7 +14,7 @@ function w3AddClass(element, name) {
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+    if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
   }
 }
 
@@ -24,7 +24,7 @@ function w3RemoveClass(element, name) {
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
     while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
     }
   }
   element.className = arr1.join(" ");
@@ -35,7 +35,7 @@ function w3RemoveClass(element, name) {
 var btnContainer = document.getElementById("myBtnContainer");
 var btns = btnContainer.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
+  btns[i].addEventListener("click", function () {
     var current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
@@ -57,33 +57,57 @@ function closeCheckOut() {
 }
 
 function validation(id) {
-	var valid = true;
-	var quantity = $("#product-quantity-" + id).val();
-	if (quantity == "" || quantity == 0) {
-		valid = false;
-	}
-	return valid;
+  var valid = true;
+  var quantity = $("#product-quantity-" + id).val();
+  if (quantity == "" || quantity == 0) {
+    valid = false;
+  }
+  return valid;
 }
 
 function increment_quantity(id) {
-	var inputQuantity = $("#" + id);
-	var newQuantity = parseInt($(inputQuantity).val()) + 1;
-	$(inputQuantity).val(newQuantity);
+  var inputQuantity = $("#" + id);
+  var newQuantity = parseInt($(inputQuantity).val()) + 1;
+  $(inputQuantity).val(newQuantity);
 }
 
 function decrement_quantity(id) {
-	var inputQuantity = $("#" + id);
-	if ($(inputQuantity).val() > 0) {
-		var newQuantity = parseInt($(inputQuantity).val()) - 1;
-		$(inputQuantity).val(newQuantity);
-	}
-}
-function addCartPizza(){
-	document.getElementById("summary").innerHTML = "BBQ CHICKEN-1000";	
-}
-function confirmationPopUp(){
-	var name = document.getElementById("name").value;
-	var address = document.getElementById("address").value;
-	alert("Thank you "+name+" for choosing Turi's Pizza. Your pizza will arrive at "+address+" in 1 hour.");
+  var inputQuantity = $("#" + id);
+  if ($(inputQuantity).val() > 0) {
+    var newQuantity = parseInt($(inputQuantity).val()) - 1;
+    $(inputQuantity).val(newQuantity);
+  }
 }
 
+$(function () {
+  function addCartPizza() {
+
+    let size = $('#size option:selected').val();
+    switch (size) {
+      case size = "reg":
+        document.getElementById("summary").innerHTML = reg;
+        break;
+      case size = "med":
+        document.getElementById("summary").innerHTML = med;
+        break;
+      case size = "lar":
+        document.getElementById("summary").innerHTML = lar;
+        break;
+    }
+  }
+})
+
+function confirmationPopUp() {
+  var name = document.getElementById("name").value;
+  var address = document.getElementById("address").value;
+  alert("Thank you " + name + " for choosing Turi's Pizza. Your pizza will arrive at " + address + " in 1 hour.");
+}
+
+
+
+
+var cheese, pepperoni, pineapple, onion;
+cheese = parseInt(document.getElementById("cheese").value);
+pepperoni = parseInt(document.getElementById("pepperoni").value);
+pineapple = parseInt(document.getElementById("pineapple").value);
+onion = parseInt(document.getElementById("onion").value);

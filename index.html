@@ -29,9 +29,9 @@
 
                 <select required class="form-control" id="size">
                     <option></option>
-                    <option id="regular" value="1000">Regular 10"-KES 1,000</option>
-                    <option id="medium" value="1500">Medium 14"-KES 1,500</option>
-                    <option id="large" value="2000">Large 18"-KES 2,000</option>
+                    <option id="regular" value="reg">Regular 10"-KES 1,000</option>
+                    <option id="medium" value="med">Medium 14"-KES 1,500</option>
+                    <option id="large" value="lar">Large 18"-KES 2,000</option>
                 </select>
 
                 <label for="crust"><b>And a Crust</b></label>
@@ -39,20 +39,25 @@
 
                 <select required class="form-control" id="crust">
                     <option></option>
-                    <option id="crispy" value="0">Crispy</option>
-                    <option id="stuffed" value="0">Stuffed</option>
-                    <option id="glutten-free" value="0">Glutten-free</option>
+                    <option id="crispy" value="crispy">Crispy</option>
+                    <option id="stuffed" value="stuffed">Stuffed</option>
+                    <option id="glutten-free" value="gluttenFree">Glutten-free</option>
                 </select>
 
                 <label for="toppings"><b>Extra Toppings</b></label>
 
                 <select required class="form-control mb-2" id="toppings">
                     <option></option>
-                    <option id="cheese" value="150">Cheese KES-150</option>
-                    <option id="pepperoni" value="200">Pepperoni KES-200</option>
-                    <option id="pineapple" value="100">Pineapple KES-100</option>
-                    <option id="onion" value="50">Onion KES-50</option>
+                    <option id="cheese" value="cheese">Cheese KES-150</option>
+                    <option id="pepperoni" value="pepperoni">Pepperoni KES-200</option>
+                    <option id="pineapple" value="pineapple">Pineapple KES-100</option>
+                    <option id="onion" value="onion">Onion KES-50</option>
                 </select>
+                <button class="quantity-input-btn" type="button"
+                    onclick="decrement_quantity('product-quantity-7')">-</button>
+                <input id="product-quantity-7" class="product-quantity" name="product_quantity" value="0">
+                <button type="button" class="quantity-input-btn"
+                    onclick="increment_quantity('product-quantity-7')">+</button>
                 <button type="button" class="btn" onclick="closeForm(); addCartPizza();">Add to Cart</button>
                 <button type="button" class="btn buy" onclick="openCheckOut(); closeForm();">Checkout</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
@@ -101,11 +106,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-1')">-</button>
-                    <input id="product-quantity-1" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-1')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button></p>
 
                 </div>
@@ -119,11 +119,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-2')">-</button>
-                    <input id="product-quantity-2" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-2')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button>
                     </p>
                 </div>
@@ -138,11 +133,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-3')">-</button>
-                    <input id="product-quantity-3" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-3')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button></p>
 
                 </div>
@@ -158,11 +148,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-4')">-</button>
-                    <input id="product-quantity-4" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-4')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button></p>
                 </div>
             </div>
@@ -175,11 +160,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-5')">-</button>
-                    <input id="product-quantity-5" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-5')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button></p>
 
                 </div>
@@ -193,11 +173,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-6')">-</button>
-                    <input id="product-quantity-6" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-6')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button></p>
 
                 </div>
@@ -213,11 +188,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-7')">-</button>
-                    <input id="product-quantity-7" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-7')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button></p>
 
                 </div>
@@ -231,11 +201,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-8')">-</button>
-                    <input id="product-quantity-8" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-8')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button></p>
 
                 </div>
@@ -249,11 +214,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-9')">-</button>
-                    <input id="product-quantity-9" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-9')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button></p>
 
                 </div>
@@ -269,11 +229,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-10')">-</button>
-                    <input id="product-quantity-10" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-10')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button></p>
                 </div>
             </div>
@@ -286,11 +241,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-11')">-</button>
-                    <input id="product-quantity-11" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-11')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button></p>
 
                 </div>
@@ -304,11 +254,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <button class="quantity-input-btn" type="button"
-                        onclick="decrement_quantity('product-quantity-12')">-</button>
-                    <input id="product-quantity-12" class="product-quantity" name="product_quantity" value="0">
-                    <button type="button" class="quantity-input-btn"
-                        onclick="increment_quantity('product-quantity-12')">+</button>
                     <p><button class="open-button" onclick="openForm()">ORDER</button></p>
 
                 </div>
