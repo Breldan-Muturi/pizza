@@ -5,11 +5,14 @@ Turi's Pizzerria allows customers to order their favorite pizzas and have them d
 ## Author:
 Breldan Muthaka
 
+## Screenshot:
+ <img src="home.png" width="1000"> 
+
 ## Installation
 
 To install the project it is necessary to follow these steps:
 
-```bash
+
 * Open https://github.com/Turi-byte/pizza. On the top right corner of your screen, you should see a button with the text 'Fork'. 
 * Clicking on this button should start the process of copying the project/repository to your own account.Click on that button which should result in a modal prompting you to choose the account to which you want to fork.
 * Select your account name which should take you to the repo you forked in your account. For example, if your GitHub username is 'Turi-byte', you should select it and not anything else that appears in the modal. This may take a couple of seconds so be patient as the process takes place.
@@ -18,7 +21,7 @@ To install the project it is necessary to follow these steps:
 * Navigate to inside the cloned repository by using the change directory (cd) command.
 * Open your editor by using the command atom . for Atom users or code . for Visual Studio Code users.
 * You are now ready to inspect and make modifications to the project.
-```
+
 
 ## Technologies
 
