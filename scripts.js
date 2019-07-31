@@ -44,7 +44,7 @@ for (var i = 0; i < btns.length; i++) {
 
 function openForm() {
   document.getElementById("myForm").style.display = "block";
-  document.getElementById("cart").innerHTML = "Add "+ document.getElementById("getVeggie").value;
+  //document.getElementById("cart").innerHTML = "Add "+ document.getElementById("getVeggie").value;
 }
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
