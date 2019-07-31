@@ -22,7 +22,7 @@
             vibe and enchantment associated with TURI's Pizzas!</p>
         <div class="form-popup" id="myForm">
             <form class="form-container">
-                <h2>Add to Cart</h2>
+                <h2 id="cart">Add to Cart</h2>
 
 
                 <label for="size"><b>Pick a Size</b></label>
@@ -59,7 +59,7 @@
                 <button type="button" class="quantity-input-btn"
                     onclick="increment_quantity('product-quantity-7')">+</button>
                 <button type="button" class="btn" onclick="closeForm(); openCheckOut(); addCartPizza();">Add to Cart</button>
-                <button type="button" class="btn buy" onclick="closeForm();">Order more</button>
+                <button type="button" class="btn buy" onclick="closeForm();addCartPizza();">Add and Order more</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Back</button>
             </form>
         </div>
@@ -98,7 +98,7 @@
         <!--Portfolio Gallery Grid-->
         <div class="row">
             <div class="column vegeterian">
-                <div class="content">
+                <div class="content" id="veggie">
                     <img src="assets/pizzas/pizza1.jpeg" alt="Veggie" style="width: 100%">
                     <h4>VEGGIE</h4>
                     <p class="extra">10"- KES 1,000 | 14" - KES 1,500 | 18" - KES 2,000</p>
@@ -106,12 +106,12 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button></p>
+                    <p><button class="open-button" id="getVeggie" value="Veggie" onclick="openForm(); addCartPizza();">ORDER</button></p>
 
                 </div>
             </div>
             <div class="column vegeterian">
-                <div class="content">
+                <div class="content" id="veggieDelux">
                     <img src="assets/pizzas/pizza2.jpg" alt="Veggie Delux" style="width: 100%">
                     <h4>VEGGIE DELUX</h4>
                     <p class="extra">10"- KES 1,000 | 14" - KES 1,500 | 18" - KES 2,000</p>
@@ -119,13 +119,13 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button>
+                    <p><button class="open-button" id="getVeggieDelux" value="Veggie Delux" onclick="openForm(); addCartPizza();">ORDER</button>
                     </p>
                 </div>
 
             </div>
             <div class="column vegeterian">
-                <div class="content">
+                <div class="content" id="spicyVegg">
                     <img src="assets/pizzas/pizza3.jpg" alt="Spicy Vegg" style="width: 100%">
                     <h4>SPICY VEGG</h4>
                     <p class="extra">10"- KES 1,000 | 14" - KES 1,500 | 18" - KES 2,000</p>
@@ -133,14 +133,14 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button></p>
+                    <p><button class="open-button" id="getSpicyVegg" value="Spicy Vegg" onclick="openForm(); addCartPizza();">ORDER</button></p>
 
                 </div>
 
             </div>
 
             <div class="column meatLovers">
-                <div class="content">
+                <div class="content" id="supreme">
                     <img src="assets/pizzas/pizza4.jpg" alt="Veggie" style="width: 100%">
                     <h4>SUPREME</h4>
                     <p class="extra">10"- KES 1,000 | 14" - KES 1,500 | 18" - KES 2,000</p>
@@ -148,24 +148,24 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button></p>
+                    <p><button class="open-button" id="getSupreme" value="Supreme" onclick="openForm(); addCartPizza();">ORDER</button></p>
                 </div>
             </div>
             <div class="column meatLovers">
-                <div class="content">
+                <div class="content" id="hauseFavorite">
                     <img src="assets/pizzas/pizza1.jpeg" alt="Veggie" style="width: 100%">
-                    <h4>HAUSE FAVORITES</h4>
+                    <h4>HAUSE FAVORITE</h4>
                     <p class="extra">10"- KES 1,000 | 14" - KES 1,500 | 18" - KES 2,000</p>
 
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button></p>
+                    <p><button class="open-button" id="getHause" id="Hause Favorite" onclick="openForm(); addCartPizza();">ORDER</button></p>
 
                 </div>
             </div>
             <div class="column meatLovers">
-                <div class="content">
+                <div class="content" id="bbqChciken">
                     <img src="assets/pizzas/pizza6.jpg" alt="Veggie" style="width: 100%">
                     <h4>BBQ CHICKEN</h4>
                     <p class="extra">10"- KES 1,000 | 14" - KES 1,500 | 18" - KES 2,000</p>
@@ -173,14 +173,14 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button></p>
+                    <p><button class="open-button" id="getBbq" id="BBQ Chicken" onclick="openForm(); addCartPizza();">ORDER</button></p>
 
                 </div>
             </div>
 
 
             <div class="column seafood">
-                <div class="content">
+                <div class="content" id="captainPrawn">
                     <img src="assets/pizzas/pizza2.jpg" alt="Veggie" style="width: 100%">
                     <h4>CAPTAIN PRAWN</h4>
                     <p class="extra">10"- KES 1,000 | 14" - KES 1,500 | 18" - KES 2,000</p>
@@ -188,12 +188,12 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button></p>
+                    <p><button class="open-button" id="getCaptain" value="Captain Prawn" onclick="openForm(); addCartPizza();">ORDER</button></p>
 
                 </div>
             </div>
             <div class="column seafood">
-                <div class="content">
+                <div class="content" id="sea silly">
                     <img src="assets/pizzas/pizza6.jpg" alt="Veggie" style="width: 100%">
                     <h4>SEA SILLY</h4>
                     <p class="extra">10"- KES 1,000 | 14" - KES 1,500 | 18" - KES 2,000</p>
@@ -201,12 +201,12 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button></p>
+                    <p><button class="open-button" id="getSilly" value="Sea Silly" onclick="openForm(); addCartPizza();">ORDER</button></p>
 
                 </div>
             </div>
             <div class="column seafood">
-                <div class="content">
+                <div class="content" id ="mumyMullet">
                     <img src="assets/pizzas/pizza1.jpeg" alt="Veggie" style="width: 100%">
                     <h4>MUMMY MULLET</h4>
                     <p class="extra">10"- KES 1,000 | 14" - KES 1,500 | 18" - KES 2,000</p>
@@ -214,14 +214,14 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button></p>
+                    <p><button class="open-button" id="getMullet" value="Mummy Mullet" onclick="openForm(); addCartPizza();">ORDER</button></p>
 
                 </div>
             </div>
 
 
             <div class="column specialty">
-                <div class="content">
+                <div class="content" id="turiTantrum">
                     <img src="assets/pizzas/pizza4.jpg" alt="Veggie" style="width: 100%">
                     <h4>TURI TANTRUM</h4>
                     <p class="extra">10"- KES 1,200 | 14" - KES 1,700 | 18" - KES 2,400</p>
@@ -229,11 +229,11 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button></p>
+                    <p><button class="open-button" id="getTantrum" value="Turi Tantrum" onclick="openForm(); addCartPizza();">ORDER</button></p>
                 </div>
             </div>
             <div class="column specialty">
-                <div class="content">
+                <div class="content" id="cheeselovers">
                     <img src="assets/pizzas/pizza3.jpg" alt="Veggie" style="width: 100%">
                     <h4>CHEESE LOVERS</h4>
                     <p class="extra">10"- KES 1,200 | 14" - KES 1,700 | 18" - KES 2,200</p>
@@ -241,12 +241,12 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button></p>
+                    <p><button class="open-button"id="getLovers" value="Cheese Lovers" onclick="openForm(); addCartPizza();">ORDER</button></p>
 
                 </div>
             </div>
             <div class="column specialty">
-                <div class="content">
+                <div class="content" id="chapo">
                     <img src="assets/pizzas/pizza4.jpg" alt="Veggie" style="width: 100%">
                     <h4>CHAPO PIZZA</h4>
                     <p class="extra">10"- KES 1,200 | 14" - KES 1,700 | 18" - KES 2,200</p>
@@ -254,7 +254,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut magnam adipisci cum
                         voluptates qui, architecto impedit officia placeat vitae ea totam doloremque odio eius neque ex,
                         minus dolores voluptatum!</p> <br>
-                    <p><button class="open-button" onclick="openForm()">ORDER</button></p>
+                    <p><button class="open-button" id="getChapo" value="Chapo Pizza" onclick="openForm(); addCartPizza();">ORDER</button></p>
 
                 </div>
             </div>

@@ -44,6 +44,7 @@ for (var i = 0; i < btns.length; i++) {
 
 function openForm() {
   document.getElementById("myForm").style.display = "block";
+  document.getElementById("cart").innerHTML = "Add "+ document.getElementById("getVeggie").value;
 }
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
@@ -103,3 +104,16 @@ function confirmationPopUp() {
   alert("Thank you " + name + " for choosing Turi's Pizza. Your pizza will arrive at " + address + " in 1 hour.");
 }
 
+function Pizzaorder(type,quantity,size,crust,toppings){
+  this.type = type;
+  this.quantity = quantity;
+  this.size = size;
+  this.crust = crust;
+  this.toppings = toppings;
+  this.price = function () {
+    return ( this.type+this.crust+this.toppings )*this.quantity;
+  };
+}
+var quantity = $("#product-quantity-" + id).val();
+
+var regularVeggie= new Pizzaorder (800, quantity,  )
